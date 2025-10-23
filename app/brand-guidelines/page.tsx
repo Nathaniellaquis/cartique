@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { Copy, Download, Check, ChevronRight, Sparkles, Palette, Type as TypeIcon, Layout, Zap, Eye, MessageCircle, ExternalLink, FileDown, Link2, Share2 } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export default function BrandGuidelines() {
     const [copiedText, setCopiedText] = useState<string | null>(null);
+    const [activeTab, setActiveTab] = useState("overview");
 
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text);
@@ -92,28 +94,65 @@ export default function BrandGuidelines() {
                 </div>
             </section>
 
-            {/* Quick Stats */}
-            <section className="py-16 px-6 lg:px-12 border-y border-[#E5E5E5] dark:border-[#1A1A1A] bg-[#FAFAFA] dark:bg-[#0A0A0A]">
+            {/* Tabs Navigation */}
+            <section className="py-8 px-6 lg:px-12 border-b border-[#E5E5E5] dark:border-[#1A1A1A] bg-[#FAFAFA] dark:bg-[#0A0A0A] sticky top-16 z-40 backdrop-blur-xl bg-white/80 dark:bg-black/80">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {[
-                            { icon: Palette, label: "Primary Colors", value: "4", desc: "Black, White, Charcoal, Gold" },
-                            { icon: TypeIcon, label: "Typeface", value: "Rubik", desc: "Google Fonts, 5 weights" },
-                            { icon: Layout, label: "Grid System", value: "8px", desc: "Base unit spacing" },
-                            { icon: Zap, label: "Components", value: "32", desc: "Ready-to-use elements" },
-                        ].map((stat, i) => (
-                            <div key={i} className="text-center">
-                                <stat.icon className="w-6 h-6 mx-auto mb-3 text-[#D4AF37]" />
-                                <div className="text-3xl font-semibold mb-1">{stat.value}</div>
-                                <div className="text-sm font-medium mb-1">{stat.label}</div>
-                                <div className="text-xs text-black/60 dark:text-white/60">{stat.desc}</div>
-                            </div>
-                        ))}
-                    </div>
+                    <Tabs value={activeTab} onValueChange={setActiveTab}>
+                        <TabsList>
+                            <TabsTrigger value="overview">
+                                <Layout className="w-4 h-4" />
+                                Overview
+                            </TabsTrigger>
+                            <TabsTrigger value="logo">
+                                <Sparkles className="w-4 h-4" />
+                                Logo
+                            </TabsTrigger>
+                            <TabsTrigger value="colors">
+                                <Palette className="w-4 h-4" />
+                                Colors
+                            </TabsTrigger>
+                            <TabsTrigger value="typography">
+                                <TypeIcon className="w-4 h-4" />
+                                Typography
+                            </TabsTrigger>
+                            <TabsTrigger value="components">
+                                <Zap className="w-4 h-4" />
+                                Components
+                            </TabsTrigger>
+                            <TabsTrigger value="voice">
+                                <MessageCircle className="w-4 h-4" />
+                                Voice
+                            </TabsTrigger>
+                        </TabsList>
+                    </Tabs>
                 </div>
             </section>
 
+            {/* Quick Stats */}
+            {activeTab === "overview" && (
+                <section className="py-16 px-6 lg:px-12 border-b border-[#E5E5E5] dark:border-[#1A1A1A]">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            {[
+                                { icon: Palette, label: "Primary Colors", value: "4", desc: "Black, White, Charcoal, Gold" },
+                                { icon: TypeIcon, label: "Typeface", value: "Rubik", desc: "Google Fonts, 5 weights" },
+                                { icon: Layout, label: "Grid System", value: "8px", desc: "Base unit spacing" },
+                                { icon: Zap, label: "Components", value: "32", desc: "Ready-to-use elements" },
+                            ].map((stat, i) => (
+                                <div key={i} className="text-center">
+                                    <stat.icon className="w-6 h-6 mx-auto mb-3 text-[#D4AF37]" />
+                                    <div className="text-3xl font-semibold mb-1">{stat.value}</div>
+                                    <div className="text-sm font-medium mb-1">{stat.label}</div>
+                                    <div className="text-xs text-black/60 dark:text-white/60">{stat.desc}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* Logo Section */}
+            {activeTab === "logo" && (
             <section id="logo" className="py-24 px-6 lg:px-12">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
@@ -259,7 +298,10 @@ export default function BrandGuidelines() {
                 </div>
             </section>
 
+            )}
+
             {/* Colors Section */}
+            {activeTab === "colors" && (
             <section id="colors" className="py-24 px-6 lg:px-12 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
@@ -451,7 +493,10 @@ export default function BrandGuidelines() {
                 </div>
             </section>
 
+            )}
+
             {/* Typography Section */}
+            {activeTab === "typography" && (
             <section id="typography" className="py-24 px-6 lg:px-12">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
@@ -589,7 +634,10 @@ export default function BrandGuidelines() {
                 </div>
             </section>
 
+            )}
+
             {/* Components Section */}
+            {activeTab === "components" && (
             <section id="components" className="py-24 px-6 lg:px-12 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
@@ -812,7 +860,10 @@ export default function BrandGuidelines() {
                 </div>
             </section>
 
+            )}
+
             {/* Voice & Tone */}
+            {activeTab === "voice" && (
             <section id="voice" className="py-24 px-6 lg:px-12">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16">
@@ -945,6 +996,8 @@ export default function BrandGuidelines() {
                     </div>
                 </div>
             </section>
+
+            )}
 
             {/* Footer */}
             <footer className="border-t-2 border-[#E5E5E5] dark:border-[#1A1A1A] py-16 px-6 lg:px-12 bg-[#FAFAFA] dark:bg-[#0A0A0A]">
