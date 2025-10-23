@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CARTIQUE
+
+Exotic Drive Marketplace — Premium luxury car rental platform.
+
+## Brand Identity
+
+Cartique represents the pinnacle of luxury car rental, connecting discerning drivers with the world's most exclusive vehicles. Our brand embodies sophistication, trust, and accessibility.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui (complete library)
+- **Font**: Inter (Light 300, Regular 400, Medium 500, Semibold 600)
+- **Icons**: Lucide React
+- **Theme**: Light/Dark mode support with next-themes
+
+## Brand Colors
+
+### Primary Palette
+- **Cartique Black**: `#000000` - Primary brand color
+- **Pure White**: `#FFFFFF` - Clean, premium backgrounds
+- **Charcoal**: `#1A1A1A` - Dark mode surfaces
+- **Luxe Gold**: `#D4AF37` - Accent and premium highlights
+
+### Neutral Grays
+- Gray 50: `#FAFAFA`
+- Gray 100: `#F5F5F5`
+- Gray 200: `#E5E5E5`
+- Gray 500: `#737373`
+- Gray 700: `#404040`
+
+## Typography
+
+- **Typeface**: Inter
+- **Weights**: Light (300) for headlines, Regular (400) for body text
+- **Scale**: 12px to 48px following standard typographic scale
+- **Line Height**: 1.2 for headlines, 1.5-1.6 for body text
+- **Letter Spacing**: Tight (-0.02em) for display, normal for body
+
+## Project Structure
+
+```
+cartique/
+├── app/
+│   ├── brand-guidelines/    # Brand guidelines page
+│   ├── globals.css           # Global styles with brand colors
+│   ├── layout.tsx            # Root layout with theme provider
+│   └── page.tsx              # Home page
+├── components/
+│   ├── ui/                   # shadcn/ui components (53 components)
+│   └── theme-provider.tsx    # Dark mode provider
+└── lib/
+    └── utils.ts              # Utility functions
+```
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### View Brand Guidelines
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to `/brand-guidelines` to view the complete brand guidelines including:
+- Logo usage
+- Color palette (light & dark mode)
+- Typography system
+- Spacing & layout principles
+- UI component styles
+- Imagery guidelines
+- Voice & tone
+- Brand dos & don'ts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design Principles
 
-## Learn More
+1. **Minimal & Premium** - Clean layouts with generous white space
+2. **Modern & Timeless** - Contemporary design that won't feel dated
+3. **Sophisticated** - Refined without being pretentious
+4. **Accessible** - Premium experience for all users
+5. **Consistent** - Unified design language across all touchpoints
 
-To learn more about Next.js, take a look at the following resources:
+## UI Components Available
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All 53 shadcn/ui components are installed and ready to use:
+- Forms: input, textarea, checkbox, radio-group, select, switch, slider
+- Layout: card, separator, scroll-area, resizable, sidebar
+- Navigation: breadcrumb, navigation-menu, menubar, tabs, pagination
+- Feedback: alert, alert-dialog, dialog, drawer, toast, spinner
+- Data Display: table, badge, avatar, calendar, chart, kbd
+- Overlays: popover, tooltip, hover-card, context-menu, dropdown-menu
+- And more...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development Guidelines
 
-## Deploy on Vercel
+### Coding Standards
+- Use functional components with hooks
+- Tailwind CSS exclusively for styling (no inline styles)
+- Follow naming conventions:
+  - Components: PascalCase (`UserProfileCard`)
+  - Functions/variables: camelCase (`fetchUserProfile`)
+  - Files/folders: kebab-case (`user-profile-card`)
+- Include ARIA attributes for accessibility
+- Ensure keyboard navigation support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Component Structure
+```tsx
+// 1. Imports
+import { Component } from "@/components/ui/component";
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+// 2. Types/Interfaces
+interface Props { }
+
+// 3. Component
+export function ComponentName({ }: Props) {
+  // 3a. State
+  // 3b. Effects
+  // 3c. Handlers
+  // 3d. Return JSX
+}
+```
+
+## License
+
+Private project for Cartique.
+
+---
+
+**Cartique** — *Where luxury meets the open road.*
