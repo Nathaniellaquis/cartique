@@ -659,92 +659,118 @@ export default function BrandGuidelines() {
                         </div>
                     </div>
 
-                    {/* Cards */}
+                    {/* Cards & Containers */}
                     <div className="mb-16">
-                        <h3 className="text-2xl font-semibold mb-8">Card System</h3>
-                        <div className="space-y-8">
-                            {/* Default Card Example */}
+                        <h3 className="text-2xl font-semibold mb-8">Cards & Containers</h3>
+
+                        <div className="space-y-6">
+                            {/* Border Style */}
                             <div>
-                                <div className="flex items-center justify-between mb-3">
-                                    <div className="text-sm font-semibold">Default Card — Vehicle Listing</div>
-                                    <code className="text-xs font-mono text-black/50 dark:text-white/50">border-2 rounded-xl p-6</code>
+                                <div className="mb-3 flex items-baseline gap-4">
+                                    <div className="font-semibold">01. Border Style</div>
+                                    <code className="text-xs font-mono text-[#737373]">border-2 border-[#E5E5E5] rounded-xl</code>
                                 </div>
-                                <div className="border-2 border-[#E5E5E5] dark:border-[#1A1A1A] rounded-xl p-6 hover:shadow-lg transition-all max-w-md">
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div>
-                                            <h4 className="text-xl font-semibold mb-1">McLaren 720S</h4>
-                                            <p className="text-sm text-black/60 dark:text-white/60">2023 • 4,200 miles • Beverly Hills, CA</p>
-                                        </div>
-                                        <div className="text-right">
-                                            <div className="text-2xl font-bold">$1,495</div>
-                                            <div className="text-xs text-black/60 dark:text-white/60">per day</div>
-                                        </div>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="border-2 border-[#E5E5E5] dark:border-[#1A1A1A] rounded-xl p-8">
+                                        <div className="w-16 h-1 bg-[#D4AF37] mb-4" />
+                                        <div className="text-2xl font-semibold mb-2">Border: 2px #E5E5E5</div>
+                                        <div className="text-sm text-[#737373] mb-4">Radius: 12px (rounded-xl)</div>
+                                        <div className="text-sm text-[#737373]">Padding: 32px (p-8)</div>
                                     </div>
-                                    <div className="flex gap-2 mb-4">
-                                        <span className="px-2 py-1 bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded text-xs font-medium">710 HP</span>
-                                        <span className="px-2 py-1 bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded text-xs font-medium">V8 Twin-Turbo</span>
-                                        <span className="px-2 py-1 bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded text-xs font-medium">RWD</span>
+                                    <div className="border border-[#E5E5E5] dark:border-[#1A1A1A] rounded-xl p-6">
+                                        <div className="text-sm font-medium mb-3">Thin Border Variant</div>
+                                        <div className="text-xs text-[#737373]">
+                                            1px border for subtle separation.<br/>
+                                            Use on light backgrounds where heavy borders overwhelm.
+                                        </div>
+                                        <code className="text-xs font-mono bg-[#F5F5F5] dark:bg-[#1A1A1A] px-2 py-1 rounded mt-3 inline-block">
+                                            border border-[#E5E5E5]
+                                        </code>
                                     </div>
-                                    <button className="w-full py-2.5 bg-black dark:bg-white text-white dark:text-black rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                                        View Details
-                                    </button>
                                 </div>
                             </div>
 
-                            {/* Accent Card Example */}
+                            {/* Accent Style */}
                             <div>
-                                <div className="flex items-center justify-between mb-3">
-                                    <div className="text-sm font-semibold">Accent Card — Featured Listing</div>
-                                    <code className="text-xs font-mono text-black/50 dark:text-white/50">border-l-4 border-[gold] bg-gradient</code>
+                                <div className="mb-3 flex items-baseline gap-4">
+                                    <div className="font-semibold">02. Gold Accent Style</div>
+                                    <code className="text-xs font-mono text-[#737373]">border-l-4 border-[#D4AF37]</code>
                                 </div>
-                                <div className="border-l-4 border-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent rounded-xl p-6 max-w-md">
-                                    <div className="flex items-start gap-3 mb-4">
-                                        <div className="px-2.5 py-1 bg-[#D4AF37] text-black rounded-lg text-xs font-bold">FEATURED</div>
-                                        <div className="px-2.5 py-1 bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded-lg text-xs font-semibold">Top Pick</div>
-                                    </div>
-                                    <div className="flex items-start justify-between mb-4">
+                                <div className="border-l-4 border-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/8 via-[#D4AF37]/4 to-transparent rounded-r-xl pl-6 pr-8 py-6">
+                                    <div className="grid md:grid-cols-2 gap-8">
                                         <div>
-                                            <h4 className="text-xl font-semibold mb-1">Lamborghini Huracán EVO</h4>
-                                            <p className="text-sm text-black/60 dark:text-white/60">2024 • 850 miles • Miami, FL</p>
+                                            <div className="text-sm text-[#D4AF37] font-bold mb-2">Left Border: 4px</div>
+                                            <div className="text-sm text-[#737373] mb-4">
+                                                Gold accent stripe signals premium or featured content. Background gradient fades left to right.
+                                            </div>
+                                            <code className="text-xs font-mono bg-white dark:bg-black px-2 py-1 rounded inline-block">
+                                                border-l-4 border-[#D4AF37]<br/>
+                                                bg-gradient-to-r from-[#D4AF37]/8 to-transparent
+                                            </code>
                                         </div>
-                                        <div className="text-right">
-                                            <div className="text-2xl font-bold">$1,895</div>
-                                            <div className="text-xs text-black/60 dark:text-white/60">per day</div>
+                                        <div className="flex items-center justify-center">
+                                            <div className="w-full h-32 border-l-4 border-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/20 to-transparent flex items-center justify-center">
+                                                <span className="text-xs font-mono text-[#737373]">Example Usage</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="flex gap-2 mb-4">
-                                        <span className="px-2 py-1 bg-[#D4AF37]/20 rounded text-xs font-medium">631 HP</span>
-                                        <span className="px-2 py-1 bg-[#D4AF37]/20 rounded text-xs font-medium">V10</span>
-                                        <span className="px-2 py-1 bg-[#D4AF37]/20 rounded text-xs font-medium">AWD</span>
-                                    </div>
-                                    <button className="w-full py-2.5 bg-[#D4AF37] text-black rounded-lg font-semibold hover:bg-[#B8941F] transition-colors">
-                                        Book Now
-                                    </button>
                                 </div>
                             </div>
 
-                            {/* Solid Card Example */}
+                            {/* Solid Style */}
                             <div>
-                                <div className="flex items-center justify-between mb-3">
-                                    <div className="text-sm font-semibold">Solid Card — Promotional CTA</div>
-                                    <code className="text-xs font-mono text-black/50 dark:text-white/50">bg-black rounded-xl p-6</code>
+                                <div className="mb-3 flex items-baseline gap-4">
+                                    <div className="font-semibold">03. Solid Fill Style</div>
+                                    <code className="text-xs font-mono text-[#737373]">bg-black / bg-[#D4AF37]</code>
                                 </div>
-                                <div className="bg-black dark:bg-white text-white dark:text-black rounded-xl p-6 relative overflow-hidden max-w-md">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/20 rounded-lg blur-3xl" />
-                                    <div className="relative">
-                                        <div className="inline-block px-2.5 py-1 bg-[#D4AF37] text-black rounded-lg text-xs font-bold mb-4">
-                                            LIMITED OFFER
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="bg-black text-white rounded-xl p-8">
+                                        <div className="text-sm text-[#D4AF37] font-bold mb-2">Black Fill</div>
+                                        <div className="text-2xl font-semibold mb-3">Maximum Contrast</div>
+                                        <div className="text-sm text-white/70 mb-4">
+                                            Use for primary CTAs, hero sections, or content requiring maximum attention.
                                         </div>
-                                        <h4 className="text-2xl font-bold mb-2">First Rental Free Insurance</h4>
-                                        <p className="text-sm text-white/80 dark:text-black/60 mb-6">
-                                            Book your first exotic rental and receive complimentary premium insurance coverage worth $500. Valid through November 30, 2025.
-                                        </p>
-                                        <button className="px-6 py-2.5 bg-white dark:bg-black text-black dark:text-white rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                                            Claim Offer
-                                        </button>
+                                        <div className="h-px bg-white/20 mb-4" />
+                                        <code className="text-xs font-mono bg-white/10 px-2 py-1 rounded">
+                                            bg-black text-white
+                                        </code>
+                                    </div>
+                                    <div className="bg-[#D4AF37] text-black rounded-xl p-8">
+                                        <div className="text-sm text-black/70 font-bold mb-2">Gold Fill</div>
+                                        <div className="text-2xl font-semibold mb-3">Premium Signal</div>
+                                        <div className="text-sm text-black/70 mb-4">
+                                            Reserved for premium features, upsells, or VIP content only.
+                                        </div>
+                                        <div className="h-px bg-black/20 mb-4" />
+                                        <code className="text-xs font-mono bg-black/10 px-2 py-1 rounded">
+                                            bg-[#D4AF37] text-black
+                                        </code>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Border Radius */}
+                    <div className="mb-16">
+                        <h3 className="text-2xl font-semibold mb-8">Border Radius Scale</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            {[
+                                { name: "None", value: "0px", class: "rounded-none", use: "Tables, strict layouts" },
+                                { name: "Small", value: "4px", class: "rounded", use: "Badges, tags, pills" },
+                                { name: "Medium", value: "8px", class: "rounded-lg", use: "Buttons, inputs, small cards" },
+                                { name: "Large", value: "12px", class: "rounded-xl", use: "Cards, containers, modals" },
+                            ].map((radius, i) => (
+                                <div key={i} className="border-2 border-[#E5E5E5] dark:border-[#1A1A1A] p-6 rounded-xl">
+                                    <div className={`w-full h-24 bg-black dark:bg-white mb-4 ${radius.class}`} />
+                                    <div className="font-semibold mb-1">{radius.name}</div>
+                                    <div className="text-sm text-[#737373] mb-2">{radius.value}</div>
+                                    <code className="text-xs font-mono bg-[#F5F5F5] dark:bg-[#1A1A1A] px-2 py-1 rounded block mb-2">
+                                        {radius.class}
+                                    </code>
+                                    <div className="text-xs text-[#737373]">{radius.use}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
