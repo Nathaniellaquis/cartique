@@ -149,17 +149,17 @@ export function BookingCheckoutPage() {
       </div>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Left Column - Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8">
               {/* Step 1: Details */}
               {currentStep === 1 && (
-                <div className="space-y-8">
+                <div className="space-y-6 sm:space-y-8">
                   <div>
-                    <h2 className="text-3xl font-bold text-white mb-2">Trip Details</h2>
-                    <p className="text-zinc-400">Provide your contact information and any special requests.</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Trip Details</h2>
+                    <p className="text-sm sm:text-base text-zinc-400">Provide your contact information and any special requests.</p>
                   </div>
 
                   <div className="space-y-6">
@@ -508,7 +508,7 @@ export function BookingCheckoutPage() {
                   size="lg"
                   onClick={handleNext}
                   disabled={currentStep === 1 && !agreedToTerms}
-                  className={currentStep === 1 ? "ml-auto" : ""}
+                  className={`w-full sm:w-auto ${currentStep === 1 ? "sm:ml-auto" : ""}`}
                 >
                   {processing ? "Processing..." : currentStep === 3 ? "Confirm & Pay" : "Continue"}
                 </Button>

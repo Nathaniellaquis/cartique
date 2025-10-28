@@ -169,14 +169,14 @@ export function ListingDetailPage({ carId }: ListingDetailPageProps) {
                       <span className="text-xs font-bold text-black">FEATURED</span>
                     </div>
                   )}
-                  <h1 className="text-5xl font-bold text-white mb-2">{car.name}</h1>
-                  <div className="flex items-center gap-3 text-sm text-zinc-300">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">{car.name}</h1>
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-300">
                     <span>{car.year}</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-500" />
                     <span>{car.mileage.toLocaleString()} mi</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-500" />
                     <div className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5" />
+                      <MapPin className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
                       <span>{car.city}</span>
                     </div>
                   </div>
@@ -188,15 +188,15 @@ export function ListingDetailPage({ carId }: ListingDetailPageProps) {
       </section>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Left Column - Details */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
 
             {/* Specifications */}
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
-              <h2 className="text-2xl font-bold text-white mb-6">Specifications</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Specifications</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {[
                   { label: "Engine", value: car.specs.engine },
                   { label: "Horsepower", value: `${car.specs.horsepower} HP` },

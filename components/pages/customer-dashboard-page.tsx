@@ -21,12 +21,12 @@ export function CustomerDashboardPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-black to-zinc-950">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-12">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
           <div>
-            <h1 className="text-5xl font-bold text-white mb-2">Welcome back, {mockCustomer.name.split(" ")[0]}</h1>
-            <p className="text-zinc-400">Manage your rentals and saved vehicles</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">Welcome back, {mockCustomer.name.split(" ")[0]}</h1>
+            <p className="text-sm sm:text-base text-zinc-400">Manage your rentals and saved vehicles</p>
           </div>
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center text-2xl font-bold text-black">
@@ -45,8 +45,8 @@ export function CustomerDashboardPage() {
         </div>
 
         {/* KPI Tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:bg-white/10 transition-all">
             <div className="flex items-start justify-between">
               <div>
                 <div className="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center mb-4">
