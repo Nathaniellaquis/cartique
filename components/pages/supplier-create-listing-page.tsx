@@ -28,6 +28,10 @@ export function SupplierCreateListingPage() {
   const [year, setYear] = useState("")
   const [category, setCategory] = useState("")
   const [price, setPrice] = useState("")
+  const [deposit, setDeposit] = useState("")
+  const [offerDelivery, setOfferDelivery] = useState(false)
+  const [deliveryFee, setDeliveryFee] = useState("")
+  const [deliveryRadius, setDeliveryRadius] = useState("")
   const [mileage, setMileage] = useState("")
   const [location, setLocation] = useState("")
   const [description, setDescription] = useState("")
@@ -293,20 +297,97 @@ export function SupplierCreateListingPage() {
 
             {/* Pricing */}
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Pricing</h3>
-              <div>
-                <Label htmlFor="price" className="text-white">Daily Rate (USD) *</Label>
-                <Input
-                  id="price"
-                  type="number"
-                  placeholder="1495"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  className="mt-2 bg-white/5 border-white/20 text-white"
-                />
-                <p className="text-xs text-zinc-500 mt-1">
-                  Cartique takes 15% commission. You'll receive ${price ? Math.round(Number(price) * 0.85) : '—'} per day.
-                </p>
+              <h3 className="text-2xl font-bold text-white mb-4">Pricing & Deposit</h3>
+              <div className="space-y-6">
+                <div>
+                  <Label htmlFor="price" className="text-white">Daily Rate (USD) *</Label>
+                  <Input
+                    id="price"
+                    type="number"
+                    placeholder="1495"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    className="mt-2 bg-white/5 border-white/20 text-white"
+                  />
+                  <p className="text-xs text-zinc-500 mt-1">
+                    Cartique takes 15% commission. You'll receive ${price ? Math.round(Number(price) * 0.85) : '—'} per day.
+                  </p>
+                </div>
+
+                <div>
+                  <Label htmlFor="deposit" className="text-white">Security Deposit (USD)</Label>
+                  <Input
+                    id="deposit"
+                    type="number"
+                    placeholder="5000"
+                    value={deposit}
+                    onChange={(e) => setDeposit(e.target.value)}
+                    className="mt-2 bg-white/5 border-white/20 text-white"
+                  />
+                  <p className="text-xs text-zinc-500 mt-1">
+                    Optional. Held as authorization on renter's card, refunded after successful return. Recommended: $3,000-$10,000.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="h-px bg-white/10" />
+
+            {/* Delivery Options */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4">Delivery & Pickup (Optional)</h3>
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <Checkbox
+                    id="offerDelivery"
+                    checked={offerDelivery}
+                    onCheckedChange={(checked) => setOfferDelivery(checked as boolean)}
+                    className="border-white/20"
+                  />
+                  <Label htmlFor="offerDelivery" className="text-white cursor-pointer">
+                    I offer delivery and pickup service
+                  </Label>
+                </div>
+
+                {offerDelivery && (
+                  <div className="pl-8 space-y-4 border-l-2 border-accent/30">
+                    <div>
+                      <Label htmlFor="deliveryFee" className="text-white">Base Delivery Fee (USD)</Label>
+                      <Input
+                        id="deliveryFee"
+                        type="number"
+                        placeholder="150"
+                        value={deliveryFee}
+                        onChange={(e) => setDeliveryFee(e.target.value)}
+                        className="mt-2 bg-white/5 border-white/20 text-white"
+                      />
+                      <p className="text-xs text-zinc-500 mt-1">
+                        Starting price for delivery within your service area
+                      </p>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="deliveryRadius" className="text-white">Maximum Delivery Distance (miles)</Label>
+                      <Input
+                        id="deliveryRadius"
+                        type="number"
+                        placeholder="50"
+                        value={deliveryRadius}
+                        onChange={(e) => setDeliveryRadius(e.target.value)}
+                        className="mt-2 bg-white/5 border-white/20 text-white"
+                      />
+                      <p className="text-xs text-zinc-500 mt-1">
+                        How far from your location will you deliver? Price may increase with distance.
+                      </p>
+                    </div>
+
+                    <div className="bg-accent/10 border border-accent/20 rounded-xl p-4">
+                      <p className="text-sm text-zinc-300">
+                        <strong className="text-accent">Tip:</strong> Many renters prefer delivery to hotels, airports, or their location. Offering this service can increase your bookings by up to 40%.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

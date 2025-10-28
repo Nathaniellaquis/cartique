@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { ChevronLeft, Check, CreditCard, Lock, Shield, AlertCircle } from "lucide-react"
+import { ChevronLeft, Check, CreditCard, Lock, Shield, AlertCircle, Upload } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -177,6 +177,105 @@ export function BookingCheckoutPage() {
                         We'll send your booking confirmation here
                       </p>
                     </div>
+
+                    <div className="h-px bg-white/10" />
+
+                    {/* Driver Verification */}
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-4">Driver Verification Required</h3>
+                      <div className="space-y-4">
+                        <div className="bg-accent/10 border border-accent/20 rounded-xl p-4">
+                          <p className="text-sm text-zinc-300">
+                            <strong className="text-accent">Important:</strong> All renters must provide a valid driver's license and proof of insurance in your name. These will be verified before pickup.
+                          </p>
+                        </div>
+
+                        <div>
+                          <Label htmlFor="licenseNumber" className="text-white">Driver's License Number *</Label>
+                          <Input
+                            id="licenseNumber"
+                            type="text"
+                            placeholder="D1234567"
+                            className="mt-2 bg-white/5 border-white/20 text-white"
+                          />
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <Label htmlFor="licenseState" className="text-white">Issuing State *</Label>
+                            <Input
+                              id="licenseState"
+                              type="text"
+                              placeholder="California"
+                              className="mt-2 bg-white/5 border-white/20 text-white"
+                            />
+                          </div>
+                          <div>
+                            <Label htmlFor="licenseExpiry" className="text-white">Expiration Date *</Label>
+                            <Input
+                              id="licenseExpiry"
+                              type="date"
+                              className="mt-2 bg-white/5 border-white/20 text-white"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <Label className="text-white">Upload Driver's License *</Label>
+                          <div className="mt-2 border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-accent/50 transition-all cursor-pointer">
+                            <Upload className="h-8 w-8 text-zinc-500 mx-auto mb-2" />
+                            <p className="text-sm text-zinc-400">Click to upload (front & back)</p>
+                            <p className="text-xs text-zinc-600 mt-1">JPG, PNG or PDF - Max 10MB</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="h-px bg-white/10" />
+
+                    {/* Personal Insurance */}
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-4">Your Personal Auto Insurance</h3>
+                      <div className="space-y-4">
+                        <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                          <p className="text-sm text-zinc-300 mb-3">
+                            You must have valid personal auto insurance under your name. Please provide your insurance information.
+                          </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <Label htmlFor="insuranceProvider" className="text-white">Insurance Provider *</Label>
+                            <Input
+                              id="insuranceProvider"
+                              type="text"
+                              placeholder="e.g., State Farm, Geico"
+                              className="mt-2 bg-white/5 border-white/20 text-white"
+                            />
+                          </div>
+                          <div>
+                            <Label htmlFor="policyNumber" className="text-white">Policy Number *</Label>
+                            <Input
+                              id="policyNumber"
+                              type="text"
+                              placeholder="POL-123456789"
+                              className="mt-2 bg-white/5 border-white/20 text-white"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <Label className="text-white">Upload Insurance Card *</Label>
+                          <div className="mt-2 border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-accent/50 transition-all cursor-pointer">
+                            <Upload className="h-8 w-8 text-zinc-500 mx-auto mb-2" />
+                            <p className="text-sm text-zinc-400">Click to upload proof of insurance</p>
+                            <p className="text-xs text-zinc-600 mt-1">JPG, PNG or PDF - Max 5MB</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="h-px bg-white/10" />
 
                     <div>
                       <Label htmlFor="requests" className="text-white">Special Requests (Optional)</Label>
