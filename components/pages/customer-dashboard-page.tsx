@@ -134,7 +134,7 @@ export function CustomerDashboardPage() {
                             <h3 className="text-2xl font-bold text-white mb-1">{booking.carName}</h3>
                             <p className="text-sm text-zinc-400">{car.location}</p>
                           </div>
-                          <Badge variant="success">Confirmed</Badge>
+                          <Badge variant="accent">Confirmed</Badge>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">

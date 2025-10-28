@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronLeft, TrendingUp, TrendingDown, DollarSign, Users, Car, Calendar, ArrowUpRight } from "lucide-react"
+import { ChevronLeft, TrendingUp, TrendingDown, DollarSign, Users, Car, Calendar, ArrowUpRight, Shield } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -56,7 +56,7 @@ export function AdminAnalyticsPage() {
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                 <DollarSign className="h-6 w-6 text-accent" />
               </div>
-              <Badge variant="success" className="text-xs">
+              <Badge variant="accent" className="text-xs">
                 <TrendingUp className="h-3 w-3 mr-1" />
                 +18%
               </Badge>
@@ -70,7 +70,7 @@ export function AdminAnalyticsPage() {
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                 <DollarSign className="h-6 w-6 text-accent" />
               </div>
-              <Badge variant="success" className="text-xs">
+              <Badge variant="accent" className="text-xs">
                 <TrendingUp className="h-3 w-3 mr-1" />
                 +15%
               </Badge>
@@ -84,7 +84,7 @@ export function AdminAnalyticsPage() {
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                 <Calendar className="h-6 w-6 text-accent" />
               </div>
-              <Badge variant="success" className="text-xs">
+              <Badge variant="accent" className="text-xs">
                 <TrendingUp className="h-3 w-3 mr-1" />
                 +23%
               </Badge>
@@ -98,7 +98,7 @@ export function AdminAnalyticsPage() {
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                 <DollarSign className="h-6 w-6 text-accent" />
               </div>
-              <Badge variant="success" className="text-xs">
+              <Badge variant="accent" className="text-xs">
                 <TrendingUp className="h-3 w-3 mr-1" />
                 +12%
               </Badge>
@@ -112,7 +112,7 @@ export function AdminAnalyticsPage() {
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 mb-12">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-white">Revenue Over Time</h2>
-            <Badge variant="success" className="text-xs">
+            <Badge variant="accent" className="text-xs">
               <TrendingUp className="h-3 w-3 mr-1" />
               +18% vs previous period
             </Badge>

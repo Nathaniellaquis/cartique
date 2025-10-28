@@ -259,7 +259,7 @@ export function ListingDetailPage({ carId }: ListingDetailPageProps) {
                         <span className="text-sm text-zinc-400">({supplier.reviews} reviews)</span>
                       </div>
                       {supplier.verified && (
-                        <Badge variant="success">ID Verified</Badge>
+                        <Badge variant="accent">ID Verified</Badge>
                       )}
                     </div>
                     <p className="text-sm text-zinc-300 mb-4 leading-relaxed">{supplier.bio}</p>

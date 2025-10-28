@@ -143,7 +143,7 @@ export function SupplierMessagesPage() {
           <div className="p-6 border-b border-white/10">
             <div className="flex items-center justify-between mb-4">
               <h1 className="text-3xl font-bold text-white">Messages</h1>
-              <Badge variant="gold" className="text-xs">Supplier</Badge>
+              <Badge variant="accent" className="text-xs">Supplier</Badge>
             </div>
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-zinc-400" />

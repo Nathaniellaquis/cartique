@@ -135,7 +135,7 @@ export function SupplierDashboardPage() {
                       className="w-full h-full object-cover"
                     />
                     {car.featured && (
-                      <Badge variant="gold" className="absolute top-3 left-3">Featured</Badge>
+                      <Badge variant="accent" className="absolute top-3 left-3">Featured</Badge>
                     )}
                   </div>
                   <div className="p-5">
@@ -147,7 +147,7 @@ export function SupplierDashboardPage() {
                         <span className="text-2xl font-bold text-white">${car.price}</span>
                         <span className="text-sm text-zinc-500">/day</span>
                       </div>
-                      <Badge variant="success">Active</Badge>
+                      <Badge variant="accent">Active</Badge>
                     </div>
 
                     <div className="grid grid-cols-2 gap-2">
@@ -204,7 +204,7 @@ export function SupplierDashboardPage() {
                   <div className="flex items-center gap-4">
                     <div className="text-right">
                       <div className="font-bold text-white">{booking.amount}</div>
-                      <Badge variant={booking.status === "confirmed" ? "success" : "outline"} className="text-xs">
+                      <Badge variant="accent" className="text-xs">
                         {booking.status}
                       </Badge>
                     </div>

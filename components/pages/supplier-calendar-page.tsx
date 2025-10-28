@@ -243,7 +243,7 @@ export function SupplierCalendarPage() {
                       <div key={booking.id} className="p-4 bg-white/5 border border-white/10 rounded-2xl">
                         <div className="flex items-center justify-between mb-2">
                           <h4 className="font-bold text-white text-sm">{booking.customerName}</h4>
-                          <Badge variant={booking.status === "confirmed" ? "success" : "outline"} className="text-xs">
+                          <Badge variant="accent" className="text-xs">
                             {booking.status}
                           </Badge>
                         </div>

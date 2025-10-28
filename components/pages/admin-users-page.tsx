@@ -178,13 +178,13 @@ export function AdminUsersPage() {
                       </div>
                     </td>
                     <td className="p-4">
-                      <Badge variant={user.role === "supplier" ? "gold" : "outline"} className="text-xs">
+                      <Badge variant={user.role === "supplier" ? "accent" : "outline"} className="text-xs">
                         {user.role}
                       </Badge>
                     </td>
                     <td className="p-4">
                       <Badge
-                        variant={user.status === "active" ? "success" : user.status === "suspended" ? "destructive" : "outline"}
+                        variant={user.status === "active" ? "accent" : user.status === "suspended" ? "destructive" : "outline"}
                         className="text-xs"
                       >
                         {user.status}

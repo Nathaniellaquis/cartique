@@ -110,7 +110,7 @@ export function AdminSuppliersPendingPage() {
                     <h3 className="font-bold text-white mb-1">{supplier.businessName}</h3>
                     <p className="text-sm text-zinc-400">{supplier.ownerName}</p>
                   </div>
-                  <Badge variant={supplier.status === "reviewing" ? "gold" : "outline"} className="text-xs">
+                  <Badge variant={supplier.status === "reviewing" ? "accent" : "outline"} className="text-xs">
                     {supplier.status}
                   </Badge>
                 </div>

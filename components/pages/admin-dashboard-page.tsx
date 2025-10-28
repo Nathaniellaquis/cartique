@@ -188,7 +188,7 @@ export function AdminDashboardPage() {
                       <p className="text-xs text-zinc-500">{activity.time}</p>
                     </div>
                   </div>
-                  <Badge variant={activity.status === "success" ? "success" : "outline"} className="text-xs">
+                  <Badge variant="accent" className="text-xs">
                     {activity.status}
                   </Badge>
                 </div>

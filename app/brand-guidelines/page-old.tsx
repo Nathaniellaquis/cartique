@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Download, Check, Sparkles, Palette, Type as TypeIcon, Layout, Zap, Eye, MessageCircle, ExternalLink, FileDown } from "lucide-react";
+import { Copy, Download, Check, Sparkles, Palette, Type as TypeIcon, Layout, Zap, Eye, MessageCircle, ExternalLink, FileDown, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";

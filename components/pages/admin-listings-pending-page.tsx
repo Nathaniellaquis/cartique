@@ -126,7 +126,7 @@ export function AdminListingsPendingPage() {
                       <span className="text-xs text-zinc-500">
                         {new Date(listing.submittedDate).toLocaleDateString()}
                       </span>
-                      <Badge variant={listing.status === "reviewing" ? "gold" : "outline"} className="text-xs">
+                      <Badge variant={listing.status === "reviewing" ? "accent" : "outline"} className="text-xs">
                         {listing.status}
                       </Badge>
                     </div>

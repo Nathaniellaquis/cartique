@@ -119,7 +119,6 @@ export function AuthModal({ open, onOpenChange, defaultView = "login" }: AuthMod
                 variant="default"
                 size="lg"
                 className="w-full"
-                loading={loading}
               >
                 Continue
               </Button>
@@ -206,7 +205,6 @@ export function AuthModal({ open, onOpenChange, defaultView = "login" }: AuthMod
                 variant="default"
                 size="lg"
                 className="w-full"
-                loading={loading}
               >
                 Create Account
               </Button>
@@ -238,7 +236,6 @@ export function AuthModal({ open, onOpenChange, defaultView = "login" }: AuthMod
                 variant="default"
                 size="lg"
                 className="w-full"
-                loading={loading}
               >
                 Send Reset Link
               </Button>
