@@ -5,26 +5,27 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-bold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] active:scale-95",
   {
     variants: {
       variant: {
-        default: "bg-black dark:bg-white text-white dark:text-black hover:opacity-90",
-        destructive:
-          "bg-red-600 text-white hover:bg-red-700",
-        outline:
-          "border-2 border-[#E5E5E5] dark:border-[#1A1A1A] bg-transparent hover:bg-[#F5F5F5] dark:hover:bg-[#1A1A1A]",
-        secondary:
-          "bg-[#F5F5F5] dark:bg-[#1A1A1A] text-black dark:text-white hover:bg-[#E5E5E5] dark:hover:bg-[#404040]",
-        ghost:
-          "hover:bg-[#F5F5F5] dark:hover:bg-[#1A1A1A]",
-        link: "text-black dark:text-white underline-offset-4 hover:underline hover:text-[#D4AF37]",
-        accent: "bg-[#D4AF37] text-black hover:bg-[#B8941F]",
+        // Primary: Glass with gold border
+        default: "bg-white/10 backdrop-blur-2xl border-2 border-[#D4AF37] text-white rounded-2xl hover:bg-white/15 hover:shadow-xl hover:shadow-[#D4AF37]/40",
+        // Secondary: Subtle glass
+        outline: "bg-white/5 backdrop-blur-xl border border-white/10 text-white rounded-2xl hover:bg-white/10 hover:border-white/20",
+        // Tertiary: Ghost
+        ghost: "bg-transparent text-white rounded-2xl hover:bg-white/5",
+        // Destructive
+        destructive: "bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl hover:bg-red-500/30",
+        // Success
+        success: "bg-green-500/20 border border-green-500/30 text-green-400 rounded-2xl hover:bg-green-500/30",
+        // Gold solid
+        gold: "bg-[#D4AF37] text-black rounded-2xl hover:bg-[#E5C158] hover:shadow-xl hover:shadow-[#D4AF37]/40",
       },
       size: {
-        default: "h-11 px-6 py-3",
-        sm: "h-9 px-4 py-2 text-sm",
-        lg: "h-12 px-8 py-4 text-base",
+        default: "h-12 px-6 py-3",
+        sm: "h-10 px-4 py-2 text-sm",
+        lg: "h-14 px-8 py-4 text-base",
         icon: "size-11",
         "icon-sm": "size-9",
         "icon-lg": "size-12",

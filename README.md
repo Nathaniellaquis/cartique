@@ -1,10 +1,54 @@
-# CARTIQUE
+# CARTIQUE — Exotic Drive Marketplace
 
-Exotic Drive Marketplace — Premium luxury car rental platform.
+> Premium luxury car rental platform. **Frontend mockup only** — no backend required.
+
+![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![React 19](https://img.shields.io/badge/React-19-blue?logo=react)
+![Tailwind CSS 4](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript)
+
+**🚀 Quick Start:** `npm install` → `npm run dev` → Visit `http://localhost:3000`
+
+---
+
+## ✅ What's Built So Far
+
+### Pages (3/84 screens complete)
+- ✅ **Home Page** (`/`) - Hero, search bar, featured cars grid, "How It Works", trust badges
+- ✅ **Search Results** (`/search`) - Filters (desktop sidebar + mobile drawer), results grid, pagination
+- 🚧 **Listing Detail** (`/listing/[id]`) - Route created, component pending
+- ⏳ **81 screens remaining** - See [complete-screen-inventory.md](./complete-screen-inventory.md)
+
+### Components (100% foundation complete)
+- ✅ Responsive Navbar (desktop + mobile hamburger menu)
+- ✅ Footer (4-column grid with social links)
+- ✅ CarCard component (with save heart, hover effects)
+- ✅ All 50+ shadcn/ui design system components
+- ✅ Mock data layer (`lib/mock-data.ts`)
+
+### Infrastructure (100%)
+- ✅ Next.js 16 App Router configured
+- ✅ Tailwind CSS 4 with brand colors
+- ✅ Rubik font (5 weights: 300, 400, 500, 600, 700)
+- ✅ Theme provider (light/dark mode support)
+- ✅ TypeScript 5
+
+**Progress: ~3%** (Foundation + 2 major pages)
+
+---
+
+## 📚 Documentation
+
+- **[IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md)** - Step-by-step guide to add new pages
+- **[BUILD_STATUS.md](./BUILD_STATUS.md)** - Detailed build progress with component breakdown
+- **[complete-screen-inventory.md](./complete-screen-inventory.md)** - Full list of all 84 screens needed
+- **[designspec.md](./designspec.md)** - Complete brand guidelines and design specifications
+
+---
 
 ## Brand Identity
 
-Cartique represents the pinnacle of luxury car rental, connecting discerning drivers with the world's most exclusive vehicles. Our brand embodies sophistication, trust, and accessibility.
+Cartique represents the pinnacle of luxury car rental, connecting discerning drivers with the world's most exclusive vehicles. Ferrari. Lamborghini. McLaren. Porsche.
 
 ## Tech Stack
 
@@ -43,21 +87,34 @@ Cartique represents the pinnacle of luxury car rental, connecting discerning dri
 
 ```
 cartique/
-├── app/
-│   ├── brand-guidelines/    # Brand guidelines page
-│   ├── globals.css           # Global styles with brand colors
-│   ├── layout.tsx            # Root layout with theme provider
-│   └── page.tsx              # Home page
+├── app/                       # Next.js 16 App Router
+│   ├── layout.tsx             # ✅ Root layout (Navbar + Footer)
+│   ├── page.tsx               # ✅ Home page
+│   ├── search/                # ✅ Search results
+│   ├── listing/[id]/          # 🚧 Listing detail (route created)
+│   ├── brand-guidelines/      # ✅ Design system reference
+│   └── globals.css            # ✅ Tailwind + brand colors
 ├── components/
-│   ├── ui/                   # shadcn/ui components (53 components)
-│   └── theme-provider.tsx    # Dark mode provider
-└── lib/
-    └── utils.ts              # Utility functions
+│   ├── cartique/              # Custom Cartique components
+│   │   ├── navbar.tsx         # ✅ Global navigation
+│   │   ├── footer.tsx         # ✅ Global footer
+│   │   └── car-card.tsx       # ✅ Reusable car card
+│   ├── pages/                 # Page-level components
+│   │   ├── home-page.tsx      # ✅ Home page content
+│   │   └── search-page.tsx    # ✅ Search page content
+│   ├── ui/                    # ✅ shadcn components (50+)
+│   └── theme-provider.tsx     # ✅ Dark mode provider
+├── lib/
+│   ├── mock-data.ts           # ✅ Complete mock data layer
+│   └── utils.ts               # ✅ Utility functions
+├── public/                    # Static assets
+├── complete-screen-inventory.md  # ✅ All 84 screens list
+├── BUILD_STATUS.md            # ✅ Detailed progress tracking
+├── IMPLEMENTATION_GUIDE.md    # ✅ How to add new pages
+└── designspec.md              # ✅ Brand guidelines
 ```
 
 ## Getting Started
-
-### Installation
 
 ```bash
 # Install dependencies
@@ -66,24 +123,36 @@ npm install
 # Run development server
 npm run dev
 
-# Build for production
-npm run build
-
-# Start production server
-npm start
+# Visit http://localhost:3000
 ```
 
-### View Brand Guidelines
+**Live pages you can visit:**
+- `/` - Home page (hero, search, featured cars)
+- `/search` - Search results (filters, grid, pagination)
+- `/brand-guidelines` - Design system reference
 
-Navigate to `/brand-guidelines` to view the complete brand guidelines including:
-- Logo usage
-- Color palette (light & dark mode)
-- Typography system
-- Spacing & layout principles
-- UI component styles
-- Imagery guidelines
-- Voice & tone
-- Brand dos & don'ts
+---
+
+## 🎯 Next Steps
+
+### Phase 1: Core Rental Flow (Recommended)
+1. **Listing Detail Page** - Image carousel, specs grid, booking card
+2. **Booking Checkout** - 3-step form (details, payment, confirm)
+3. **Customer Dashboard** - KPI tiles, saved cars, messages
+4. **Auth Modal** - Login/signup modal component
+
+### Phase 2: Supplier Tools
+1. Supplier Application & Status
+2. Supplier Dashboard
+3. Create/Edit Listing
+4. Calendar & Bookings
+
+### Phase 3: Admin Tools
+1. Admin Dashboard
+2. Supplier/Listing Moderation
+3. Analytics
+
+See [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md) for step-by-step instructions.
 
 ## Design Principles
 
